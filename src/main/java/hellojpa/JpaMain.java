@@ -18,14 +18,8 @@ public class JpaMain {
         try {
 
             //영속
-            Member findMember1 = em.find(Member.class, 101L);
-            Member findMember2 = em.find(Member.class, 101L);
-
-
-            System.out.println("result = " + (findMember1 == findMember2));
-
-            System.out.println(findMember1);
-            System.out.println(findMember2);
+            Member member = em.find(Member.class, 150L);
+            member.setName("ZZZZZ");
 
             tx.commit();
         } catch (Exception e) {
