@@ -28,6 +28,7 @@ public class JpaMain {
             em.clear();
 
             Parent findParent = em.find(Parent.class, parent.getId());
+            em.remove(findParent);
             findParent.getChildList().remove(0);
 
             tx.commit();
